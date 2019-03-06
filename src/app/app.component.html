@@ -1,0 +1,13 @@
+<div class="container">
+  <form (ngSubmit)="getIssue()" >
+    <div class="form-group">
+      <label for="name">GitHub Repo</label>
+      <input type="text" [formControl]="gitrepo" placeholder="Git Repositoray">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+
+<p *ngFor=" let item of data">{{item.title}}</p>
