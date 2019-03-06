@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
   <form (ngSubmit)="getIssue()" >
     <div class="form-group">
-      <label for="name">GitHub Repo</label>
+      https://github.com/
       <input type="text" [formControl]="gitrepo" placeholder="Git Repositoray">
+      <button type="submit" class="btn btn-success fa fa-search"></button>
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    
 
   </form>
 </div>
