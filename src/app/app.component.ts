@@ -21,6 +21,8 @@ export class AppComponent {
     this.apiService.getRepoIssue(this.gitrepo.value).subscribe((res:Gitissue[])=>{
       console.log(res);
       this.data=res;
+    },error=>{
+      alert("Some Error Occured");
     });  
   }
 }
