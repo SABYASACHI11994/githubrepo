@@ -1,4 +1,4 @@
 export class Gitissue {
-    created_at: string;
+    created_at: Date;
     state: string;
 }

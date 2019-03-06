@@ -1,15 +1,46 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="container">
-  <form (ngSubmit)="getIssue()" >
-    <div class="form-group">
-      https://github.com/
-      <input type="text" [formControl]="gitrepo" placeholder="Git Repositoray">
-      <button type="submit" class="btn btn-success fa fa-search"></button>
-    </div>
-
+<mat-toolbar color="primary">
+    <form (ngSubmit)="getIssue()" >
+        <div class="form-group">
+          https://github.com/
+          <!-- <mat-form-field > -->
+              <input matInput  type="text" [formControl]="gitrepo" >
+            <!-- </mat-form-field> -->
+          
+          <button type="submit" class="fa fa-search" mat-button><i class="material-icons">
+              search
+              </i></button>
+        </div>
     
+    
+      </form>
+  </mat-toolbar>
 
-  </form>
-</div>
 
-<p *ngFor=" let item of data">{{item.title}}</p>
+<!-- <p  *ngIf="!showtable && gitrepo.touched"><b></b></p> -->
+<table *ngIf="showtable">
+  <thead>
+    <tr>
+      <th >{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <th align="left">Total number of open issues</th>
+      <td align="right">{{result[0]}}</td>
+    </tr>
+    <tr >
+      <th align="left">Number of open issues that were opened in the last 24 hours</th>
+      <td align="right">{{result[1]}}</td>
+    </tr>
+    <tr >
+      <th align="left">Number of open issues that were opened more than 24 hours ago but less than 7 days ago</th>
+      <td align="right">{{result[2]}}</td>
+    </tr>
+    <tr >
+      <th align="left">Number of open issues that were opened more than 7 days ago </th>
+      <td align="right">{{result[3]}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
