@@ -11,6 +11,7 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   data:Gitissue[];
   gitrepo = new FormControl('');
+  result:any[];
   ngOnInit(){
   
   }
@@ -25,4 +26,6 @@ export class AppComponent {
       alert("Some Error Occured");
     });  
   }
+
+  
 }
