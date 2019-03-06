@@ -1,12 +1,12 @@
 <mat-toolbar color="primary">
-    <form (ngSubmit)="getIssue()" >
+    <form (ngSubmit)="getIssue()">
         <div class="form-group">
           https://github.com/
           <!-- <mat-form-field > -->
-              <input matInput  type="text" [formControl]="gitrepo" >
+              <input matInput  type="text" [formControl]="gitrepo" required >
             <!-- </mat-form-field> -->
           
-          <button type="submit" class="fa fa-search" mat-button><i class="material-icons">
+          <button [disabled]="!gitrepo.valid" type="submit" class="fa fa-search" mat-button><i class="material-icons">
               search
               </i></button>
         </div>

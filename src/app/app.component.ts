@@ -11,7 +11,7 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   data: Gitissue[];
 // Form Control Declaration
-  gitrepo = new FormControl('');
+  gitrepo = new FormControl();
 
   // Initialize result count into fixed array
   result: [0, 0, 0, 0];
