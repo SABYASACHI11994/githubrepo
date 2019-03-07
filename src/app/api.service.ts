@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getRepoIssue(repo:string) {
-    return this.httpClient.get(`${this.apiURL}/repos/${repo}/issues`);
+  public getRepoIssue(repo:string,page:number) {
+    return this.httpClient.get(`${this.apiURL}/repos/${repo}/issues?page=${page}&per_page=100`,{observe: 'response'});
   }
 }

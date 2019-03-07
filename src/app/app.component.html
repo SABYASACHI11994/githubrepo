@@ -6,7 +6,7 @@
               <input matInput  type="text" [formControl]="gitrepo" required >
             <!-- </mat-form-field> -->
           
-          <button [disabled]="!gitrepo.valid" type="submit" class="fa fa-search" mat-button><i class="material-icons">
+          <button [disabled]="!gitrepo.valid || spinner" type="submit" class="fa fa-search" mat-button><i class="material-icons">
               search
               </i></button>
         </div>
@@ -16,7 +16,7 @@
   </mat-toolbar>
 
 
-<!-- <p  *ngIf="!showtable && gitrepo.touched"><b></b></p> -->
+<p  *ngIf="spinner"><b>Loading.....</b></p>
 <table *ngIf="showtable">
   <thead>
     <tr>
